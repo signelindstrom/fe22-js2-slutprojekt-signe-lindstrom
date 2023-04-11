@@ -1,0 +1,283 @@
+body{
+    background-color: rgb(31, 31, 31);
+}
+
+button{
+    cursor: pointer;
+    font-family: 'Bungee';
+    background-color: black;
+    color: #ABFF4F;
+}
+
+img{
+    max-height: 80px;
+}
+
+/* --- index-html --- */
+
+#user-input{
+    display: none;
+}
+
+#login-container{
+    display: flex;
+    flex-flow: column wrap;
+    background-color: rgb(64, 63, 63);
+    width: 25rem;
+    margin: 10px auto;
+    position: relative;
+    top: 40px;
+    border: 2px white solid;
+    padding: 20px;
+    text-align: center;
+}
+
+#login-headline{
+    cursor: pointer;
+    background-color: black;
+    color: #ABFF4F;
+    width:fit-content;
+    padding: 20px;
+    position: relative;
+    margin: 10px auto;
+    font-family: 'Bungee';
+}
+
+#user-submit{
+    position: relative;
+    top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    /* flex-direction: column; */
+    margin: 10px auto;
+}
+
+#username-input{
+    font-family: 'IBM Plex Mono';
+}
+
+#username-label, #password-label{
+    font-family: 'Bungee';
+    display:flex;
+    margin: 5px;
+    flex-direction: column;
+}
+
+#user-choice{
+    /* background-color: aqua; */
+    text-align: center;
+    padding: 20px;
+}
+
+#user-choice>button{
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Bungee';
+    background-color: black;
+    color: #ABFF4F;
+}
+
+.avatarDiv>img{
+    cursor: pointer;
+}
+
+.errorMessage{
+    color: #ABFF4F;
+    font-family: 'Bungee';
+    font-size: small;
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+/* --- --- */
+
+
+/* --- homepage, profile & profileViewer --- */
+
+#headline-profile{
+    background-color: black;
+    color: #ABFF4F;
+    width: fit-content;
+    padding: 20px;
+    font-family: 'Bungee';
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    /* cursor: pointer; */
+}
+
+#user-info{
+    background-color: 	#403f3f;
+    /* display: flex; */
+    position: absolute;
+    width: 12rem;  
+    text-align: center;
+    top: 183px;
+    font-family: 'Bungee';
+    font-size: small;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 40px;
+    left: 38px;
+    color: #D93DAA;
+}
+
+
+#post-div{
+    text-align: center;
+    padding: 40px;
+    background-color: black;
+    /* color: #ABFF4F; */
+    color:#ABFF4F;
+    width: 45vw;
+    position:relative;
+    margin: 10px auto;
+    top: 70px;
+
+}
+
+#post-div>p{
+    font-family: 'Bungee';
+    margin: 0;
+}
+
+#post-div>input{
+    height: 30px;
+    width: 500px;
+    padding: 10px;
+    margin: 10px;
+    font-family: 'IBM Plex Mono';
+    color: #59D2FE;
+    background-color: 	#403f3f;
+}
+
+#post-div>button{
+    height: 40px;
+    cursor: pointer;
+    background-color: black;
+    color: #D93DAA;
+    border: 1px white solid;
+}
+
+#post-div>h1{
+    font-family: 'Bungee';
+    font-size: medium;
+    padding-bottom: 10px;
+}
+
+#all-posts{
+    padding: 20px;
+    background-color: 	#403f3f;
+    font-family: 'IBM Plex Mono';
+    color: #59D2FE;
+    /* color: #D93DAA; */
+}
+
+#all-posts>div{
+    text-align: left;
+    padding: 20px;
+    border-bottom: white 2px solid;
+    margin: 10px;
+}
+
+
+.homepagePost{
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+}
+
+.homepagePost>h3{
+    font-family: 'Bungee';
+    padding-left: 10px;
+    padding-right: 60px;
+    color: #D93DAA;
+}
+
+.homepagePost>p{
+    color: #59D2FE;
+    font-family: 'IBM Plex Mono';
+}
+
+
+#user-list{
+    font-family: 'Bungee';
+    background-color: black;
+    /* color: #ABFF4F; */
+    color: #ABFF4F;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 15rem;
+    /* display: flex; */
+    /* flex-flow: column; */
+    /* justify-content: space-evenly; */
+    text-align: right;
+    /* white-space:pre-wrap; */
+    display: grid;
+    height: 100vh;
+    overflow: auto;
+}
+
+#user-list>div{
+    padding: 10px;
+    /* text-align: right; */
+    font-size: large;
+    /* cursor: pointer; */
+    /* flex-grow: 2; */
+    display: inline-flex;
+    /* border: whitesmoke 2px solid; */
+    height: 80px;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    align-items: center;
+    color: #D93DAA;
+}
+
+#user-list>h2{
+    padding: 10px;
+    text-align: center;
+    /* font-size: large; */
+    flex-basis: 15rem;
+}
+
+#user-list>img{
+    width: 30px;
+}
+
+
+
+#my-page-btn, #homepage-btn{
+    position: absolute;
+    top: 275px;
+    /* left: 11rem; */
+    left: 46px;
+    z-index: 1;
+    width: 11rem;
+    background-color: black;
+    color: #ABFF4F;
+    cursor: pointer;
+}
+
+#log-out-btn{
+    background-color: black;
+    color: #ABFF4F;
+    cursor: pointer;
+    position: fixed;
+    bottom: 10px;
+}
+
+#delete-btn{
+    background-color: black;
+    color: #ABFF4F;
+    cursor: pointer;
+    position: fixed;
+    bottom: 10px;
+    left: 90px;
+}
+
+/* --- --- */

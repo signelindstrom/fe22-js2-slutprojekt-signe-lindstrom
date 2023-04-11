@@ -1,0 +1,17 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "parcel ./src/index.html ./src/html/profile.html ./src/html/profileViewer.html ./src/html/homepage.html",
+    "build": "parcel build ./src/index.html ./src/html/profile.html ./src/html/profileViewer.html ./src/html/homepage.html --dist-dir docs --public-url ./",
+    "clean": "del-cli ./.parcel-cache ./docs ./dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "del-cli": "^5.0.0",
+    "parcel": "^2.8.3"
+  }
+}

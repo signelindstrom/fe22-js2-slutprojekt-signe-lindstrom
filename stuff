@@ -1,0 +1,20 @@
+async function deleteUser() {
+    const url = baseUrl + "users.json";
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const userArray = Object.values(data);
+    // console.log(userArray);
+
+        for (let i = 0; i < userArray.length; i++) {
+            const { username, password, avatar } = userArray[i];
+            if (currentUser == username && currentPassword == password && currentAvatar == avatar) {
+                console.log('hej')
+                break;
+            }
+        }
+        
+    }
+
+    errorMessage.innerText = 'username or password is wrong';
