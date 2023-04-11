@@ -67,6 +67,7 @@ export async function getUserList(userListDiv: HTMLDivElement) {
     }
 }
 
+// lets user log out, redirects user to login-page
 export function logOut(btn: HTMLButtonElement) {
     btn.addEventListener('click', () => {
         location.assign('../index.html')

@@ -9,7 +9,7 @@ const postsDiv = document.querySelector('#all-posts') as HTMLDivElement;
 
 
 const homepageBtn = document.querySelector('#homepage-btn') as HTMLButtonElement;
-homepageBtn.addEventListener('click', ()=>{
+homepageBtn.addEventListener('click', () => {
     location.assign('../html/homepage.html');
 })
 
@@ -34,7 +34,6 @@ async function getId() {
             localStorage.setItem('userId', userId);
         }
     }
-
 }
 
 

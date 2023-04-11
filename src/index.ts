@@ -57,8 +57,8 @@ async function getUserData() {
         loginUser(userArray);
 
         function loginUser(array) {
-            array.forEach((info: firebaseUser) => {
-                const { username, password, avatar } = info;
+            for(let i = 0; i<array.length; i++) {
+                const { username, password, avatar } = array[i];
                 if (usernameInput.value == username && passwordInput.value == password) {
                     errorMessage.innerText = '';
                     localStorage.setItem('user', usernameInput.value);
@@ -67,10 +67,10 @@ async function getUserData() {
                     setTimeout(() => {
                         location.assign('../html/homepage.html');
                     }, 400);
-                    return;
+                    break;
                 }
                 else errorMessage.innerText = 'username or password is wrong :('
-            })
+            }
         }
 
 
@@ -82,22 +82,22 @@ async function getUserData() {
         signUpUser(userArray);
 
         function signUpUser(array) {
-            array.forEach((info: firebaseUser) => {
-                const { username, password } = info;
+            for(let i = 0; i<array.length; i++) {
+                const { username, password } = array[i];
                 if (usernameInput.value == username && passwordInput.value == password) {
                     errorMessage.innerText = 'user already exist, try logging in instead :)'
                     addNewUser = false;
-                    return;
+                    break;
                 }
                 else if (usernameInput.value == username) {
                     errorMessage.innerText = 'name already in use :('
                     addNewUser = false;
-                    return;
+                    break;
                 }
                 else if (usernameInput.value != username) {
                     addNewUser = true;
                 }
-            })
+            }
         }
 
     }
