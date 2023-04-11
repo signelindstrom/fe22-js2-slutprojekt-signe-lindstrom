@@ -27,12 +27,19 @@ async function getId() {
     const userArray = Object.values(data);
     const keyArray = Object.keys(data);
 
-    for (let i = 0; i < userArray.length; i++) {
-        const { username } = userArray[i];
-        if (currentUser == username) {
-            const userId = keyArray[i];
-            localStorage.setItem('userId', userId);
-        }
+    idFromDatabase(userArray)
+    function idFromDatabase(array) {
+        let i:number = 0;
+        array.forEach((info: firebaseUser) => {
+            const { username } = info;
+            if (currentUser == username) {
+                const userId = keyArray[i];
+                console.log(keyArray[i])
+                localStorage.setItem('userId', userId);
+                // console.log(userId)
+            }
+            i++;
+        })
     }
 }
 
