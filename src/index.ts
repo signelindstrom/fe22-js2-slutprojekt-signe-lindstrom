@@ -1,4 +1,4 @@
-import { baseUrl, getFirebaseData } from "./modules/multiUseFunctions";
+import { baseUrl, firebaseUser, getFirebaseData } from "./modules/multiUseFunctions";
 
 const loginBtn = document.querySelector('#login-btn') as HTMLButtonElement;
 const signupBtn = document.querySelector('#signup-btn') as HTMLButtonElement;
@@ -54,44 +54,52 @@ async function getUserData() {
 
     // login existing user
     if (newUser == false) {
-        console.log(userArray.length)
-        for (let i = 0; i < userArray.length; i++) {
-            const { username, password, avatar } = userArray[i];
-            if (usernameInput.value == username && passwordInput.value == password) {
-                errorMessage.innerText = '';
-                localStorage.setItem('user', usernameInput.value);
-                localStorage.setItem('password', passwordInput.value);
-                localStorage.setItem('avatar', avatar);
-                setTimeout(() => {
-                    location.assign('../html/homepage.html');
-                }, 400);
-                break;
-            }
-            else errorMessage.innerText = 'username or password is wrong :('
+        loginUser(userArray);
+
+        function loginUser(array) {
+            array.forEach((info: firebaseUser) => {
+                const { username, password, avatar } = info;
+                if (usernameInput.value == username && passwordInput.value == password) {
+                    errorMessage.innerText = '';
+                    localStorage.setItem('user', usernameInput.value);
+                    localStorage.setItem('password', passwordInput.value);
+                    localStorage.setItem('avatar', avatar);
+                    setTimeout(() => {
+                        location.assign('../html/homepage.html');
+                    }, 400);
+                    return;
+                }
+                else errorMessage.innerText = 'username or password is wrong :('
+            })
         }
+
 
     }
 
 
     // sign up new user
     if (newUser == true) {
+        signUpUser(userArray);
 
-        for (let i = 0; i < userArray.length; i++) {
-            const { username, password } = userArray[i];
-            if (usernameInput.value == username && passwordInput.value == password) {
-                errorMessage.innerText = 'user already exist, try logging in instead :)'
-                addNewUser = false;
-                break;
-            }
-            else if (usernameInput.value == username) {
-                errorMessage.innerText = 'name already in use :('
-                addNewUser = false;
-                break;
-            }
-            else if (usernameInput.value != username) {
-                addNewUser = true;
-            }
+        function signUpUser(array) {
+            array.forEach((info: firebaseUser) => {
+                const { username, password } = info;
+                if (usernameInput.value == username && passwordInput.value == password) {
+                    errorMessage.innerText = 'user already exist, try logging in instead :)'
+                    addNewUser = false;
+                    return;
+                }
+                else if (usernameInput.value == username) {
+                    errorMessage.innerText = 'name already in use :('
+                    addNewUser = false;
+                    return;
+                }
+                else if (usernameInput.value != username) {
+                    addNewUser = true;
+                }
+            })
         }
+
     }
 
     // adds new user to database
@@ -136,7 +144,7 @@ const loginContainerDiv = document.querySelector('#login-container') as HTMLDivE
 function userChooseAvatar() {
     const avatarDiv = document.createElement('div');
     avatarDiv.classList.add('avatarDiv');
-    
+
     const avatar1 = document.createElement('img');
     const avatar2 = document.createElement('img');
     const avatar3 = document.createElement('img');
