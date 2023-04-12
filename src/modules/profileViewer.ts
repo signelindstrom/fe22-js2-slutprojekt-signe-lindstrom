@@ -1,7 +1,7 @@
 const currentViewUser = localStorage.getItem('viewUser');
 const curretViewUserAvatar = localStorage.getItem('viewUserAvatar');
 
-import { logOut, createProfile, getUserList, getFirebaseData, postObject } from "./multiUseFunctions";
+import { logOut, createProfile, getUserList, getFirebaseData, postObject, firebaseUser } from "./multiUseFunctions";
 
 const homepageBtn = document.querySelector('#homepage-btn') as HTMLButtonElement;
 homepageBtn.addEventListener('click', () => {
@@ -27,14 +27,20 @@ async function getId() {
     const userArray = Object.values(data);
     const keyArray = Object.keys(data);
 
-    for (let i = 0; i < userArray.length; i++) {
-        const { username } = userArray[i];
-        if (currentViewUser == username) {
-            const userId = keyArray[i];
-            localStorage.setItem('currentView', userId);
-        }
+    idFromDatabase(userArray)
+    function idFromDatabase(array) {
+        let i:number = 0;
+        array.forEach((info: firebaseUser) => {
+            const { username } = info;
+            if (currentViewUser == username) {
+                const currentView = keyArray[i];
+                console.log(keyArray[i])
+                localStorage.setItem('currentView', currentView);
+                // console.log(userId)
+            }
+            i++;
+        })
     }
-
 }
 
 const postsDiv = document.querySelector('#all-posts') as HTMLDivElement;
