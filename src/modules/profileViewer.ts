@@ -3,6 +3,7 @@ const curretViewUserAvatar = localStorage.getItem('viewUserAvatar');
 
 import { logOut, createProfile, getUserList, getFirebaseData, postObject, firebaseUser } from "./multiUseFunctions";
 
+// redirects user to homepage
 const homepageBtn = document.querySelector('#homepage-btn') as HTMLButtonElement;
 homepageBtn.addEventListener('click', () => {
     setTimeout(() => {
@@ -62,6 +63,7 @@ async function getPost() {
 
 }
 
+// displays posts from database
 function showAllPosts(postArray) {
     postsDiv.innerHTML = '';
     postArray.forEach((data: postObject) => {

@@ -48,7 +48,6 @@ img{
     top: 10px;
     margin-bottom: 10px;
     display: flex;
-    /* flex-direction: column; */
     margin: 10px auto;
 }
 
@@ -64,7 +63,6 @@ img{
 }
 
 #user-choice{
-    /* background-color: aqua; */
     text-align: center;
     padding: 20px;
 }
@@ -106,12 +104,10 @@ img{
     position: absolute;
     top: 0px;
     left: 30px;
-    /* cursor: pointer; */
 }
 
 #user-info{
     background-color: 	#403f3f;
-    /* display: flex; */
     position: absolute;
     width: 12rem;  
     text-align: center;
@@ -131,7 +127,6 @@ img{
     text-align: center;
     padding: 40px;
     background-color: black;
-    /* color: #ABFF4F; */
     color:#ABFF4F;
     width: 45vw;
     position:relative;
@@ -174,7 +169,6 @@ img{
     background-color: 	#403f3f;
     font-family: 'IBM Plex Mono';
     color: #59D2FE;
-    /* color: #D93DAA; */
 }
 
 #all-posts>div{
@@ -186,7 +180,6 @@ img{
 
 
 .homepagePost{
-    /* background-color: aqua; */
     display: flex;
     align-items: center;
 }
@@ -207,17 +200,12 @@ img{
 #user-list{
     font-family: 'Bungee';
     background-color: black;
-    /* color: #ABFF4F; */
     color: #ABFF4F;
     position: fixed;
     right: 0px;
     top: 0px;
     width: 15rem;
-    /* display: flex; */
-    /* flex-flow: column; */
-    /* justify-content: space-evenly; */
     text-align: right;
-    /* white-space:pre-wrap; */
     display: grid;
     height: 100vh;
     overflow: auto;
@@ -225,23 +213,19 @@ img{
 
 #user-list>div{
     padding: 10px;
-    /* text-align: right; */
     font-size: large;
-    /* cursor: pointer; */
-    /* flex-grow: 2; */
     display: inline-flex;
-    /* border: whitesmoke 2px solid; */
     height: 80px;
     justify-content: space-evenly;
     flex-direction: row-reverse;
     align-items: center;
     color: #D93DAA;
+    cursor: pointer;
 }
 
 #user-list>h2{
     padding: 10px;
     text-align: center;
-    /* font-size: large; */
     flex-basis: 15rem;
 }
 
@@ -254,7 +238,6 @@ img{
 #my-page-btn, #homepage-btn{
     position: absolute;
     top: 275px;
-    /* left: 11rem; */
     left: 46px;
     z-index: 1;
     width: 11rem;

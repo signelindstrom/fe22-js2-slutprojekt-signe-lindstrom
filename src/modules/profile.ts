@@ -7,11 +7,12 @@ const displayName = document.querySelector('#user-name') as HTMLElement;
 
 const postsDiv = document.querySelector('#all-posts') as HTMLDivElement;
 
-
+// redirects user to homepage
 const homepageBtn = document.querySelector('#homepage-btn') as HTMLButtonElement;
 homepageBtn.addEventListener('click', () => {
     location.assign('../html/homepage.html');
 })
+
 
 createProfile(currentUser, currentAvatar, displayAvatar, displayName);
 
@@ -20,7 +21,7 @@ setTimeout(() => {
     getPost();
 }, 200);
 
-
+// get id of user to show user posts
 async function getId() {
     const data = await getFirebaseData(`users.json`);
 
@@ -86,7 +87,6 @@ async function addPost(array) {
             }
             return;
         }
-        // else console.log('no');
         setTimeout(() => {
             getPost();
             makePost.value = '';
@@ -124,8 +124,7 @@ getUserList(userListDiv);
 // lets user delete their account from database and redirects user to login-page
 const deleteBtn = document.querySelector('#delete-btn') as HTMLButtonElement;
 deleteBtn.addEventListener('click', async () => {
-    console.log('hej');
-
+    
     const data = await getFirebaseData('users.json');
     const userArray = Object.values(data);
 

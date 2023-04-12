@@ -5,6 +5,7 @@ const currentAvatar = localStorage.getItem('avatar');
 
 const postsDiv = document.querySelector('#all-posts') as HTMLDivElement;
 
+// redirects user to their profile
 const goToMyPage = document.querySelector('#my-page-btn') as HTMLButtonElement;
 goToMyPage.addEventListener('click', () => {
     location.assign('../html/profile.html');
@@ -15,6 +16,7 @@ const displayName = document.querySelector('#user-name') as HTMLElement;
 
 createProfile(currentUser, currentAvatar, displayAvatar, displayName);
 
+// get and display all posts
 getPosts();
 async function getPosts() {
     const data = await getFirebaseData(`users.json`);
@@ -23,7 +25,7 @@ async function getPosts() {
     showAllPosts(userArray);
 }
 
-
+// object structure for postsArray
 type postForFeed = {
     post: string,
     timestamp: number,
