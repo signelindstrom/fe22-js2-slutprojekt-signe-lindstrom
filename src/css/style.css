@@ -9,6 +9,10 @@ button{
     color: #ABFF4F;
 }
 
+button:hover{
+    color: #D93DAA;
+}
+
 img{
     max-height: 80px;
 }
@@ -75,6 +79,10 @@ img{
     font-family: 'Bungee';
     background-color: black;
     color: #ABFF4F;
+}
+
+#user-choice>button:hover{
+    color: #D93DAA;
 }
 
 .avatarDiv>img{
@@ -223,6 +231,11 @@ img{
     cursor: pointer;
 }
 
+#user-list>div:hover{
+    background-color: #403f3f;
+    color: #59D2FE;
+}
+
 #user-list>h2{
     padding: 10px;
     text-align: center;
@@ -261,6 +274,10 @@ img{
     position: fixed;
     bottom: 10px;
     left: 90px;
+}
+
+#my-page-btn:hover, #homepage-btn:hover,#log-out-btn:hover,#delete-btn:hover{
+    color: #D93DAA;
 }
 
 /* --- --- */
