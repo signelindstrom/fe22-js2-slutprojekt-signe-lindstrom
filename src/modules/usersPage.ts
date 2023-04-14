@@ -7,7 +7,7 @@ import { logOut, createProfile, getUserList, getFirebaseData, postObject, fireba
 const homepageBtn = document.querySelector('#homepage-btn') as HTMLButtonElement;
 homepageBtn.addEventListener('click', () => {
     setTimeout(() => {
-        location.assign('../html/homepage.html');
+        location.assign('../html/homePage.html');
     }, 100);
 })
 

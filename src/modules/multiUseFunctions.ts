@@ -59,7 +59,7 @@ export async function getUserList(userListDiv: HTMLDivElement) {
                     localStorage.setItem('viewUser', username);
                     localStorage.setItem('viewUserAvatar', avatar);
                     setTimeout(() => {
-                        location.assign('../html/profileViewer.html');
+                        location.assign('../html/usersPage.html');
                     }, 100);
                 })
             }

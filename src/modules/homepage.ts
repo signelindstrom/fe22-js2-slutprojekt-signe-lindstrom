@@ -8,7 +8,7 @@ const postsDiv = document.querySelector('#all-posts') as HTMLDivElement;
 // redirects user to their profile
 const goToMyPage = document.querySelector('#my-page-btn') as HTMLButtonElement;
 goToMyPage.addEventListener('click', () => {
-    location.assign('../html/profile.html');
+    location.assign('../html/myPage.html');
 })
 
 const displayAvatar = document.querySelector('#user-avatar') as HTMLImageElement;
