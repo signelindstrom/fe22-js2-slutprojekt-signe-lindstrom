@@ -65,7 +65,8 @@ async function getUserData() {
                     localStorage.setItem('password', passwordInput.value);
                     localStorage.setItem('avatar', avatar);
                     setTimeout(() => {
-                        window.location.href = "./html/homePage.html"
+                        // window.location.href = "./html/homePage.html"
+                        location.assign('./html/homePage.html');
                     }, 400);
                     break;
                 }
@@ -131,8 +132,8 @@ async function getUserData() {
         localStorage.setItem('avatar', userAvatar);
 
         setTimeout(() => {
-            window.location.href = "./html/homePage.html"
-            // location.assign('../html/homePage.html');
+            // window.location.href = "./html/homePage.html"
+            location.assign('./html/homePage.html');
         }, 400);
 
     }
