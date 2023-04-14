@@ -1,4 +1,4 @@
-import { baseUrl, firebaseUser, getFirebaseData } from "./modules/multiUseFunctions";
+import { baseUrl, getFirebaseData } from "./modules/multiUseFunctions";
 
 const loginBtn = document.querySelector('#login-btn') as HTMLButtonElement;
 const signupBtn = document.querySelector('#signup-btn') as HTMLButtonElement;
@@ -10,6 +10,7 @@ let addNewUser: boolean = false;
 
 let userAvatar: string = '';
 
+// click logo to reload page and return to login or signup
 document.querySelector('#login-headline')?.addEventListener('click', () => {
     location.reload();
 })
@@ -17,14 +18,12 @@ document.querySelector('#login-headline')?.addEventListener('click', () => {
 
 // login existing user or sign up new user
 loginBtn.addEventListener('click', () => {
-    console.log('login');
     userInputDiv.style.display = 'inline-block';
     userChoiceDiv.style.display = 'none'
 })
 
 signupBtn.addEventListener('click', () => {
     newUser = true;
-    console.log('signup');
     userInputDiv.style.display = 'inline-block';
     userChoiceDiv.style.display = 'none'
 
@@ -57,7 +56,7 @@ async function getUserData() {
         loginUser(userArray);
 
         function loginUser(array) {
-            for(let i = 0; i<array.length; i++) {
+            for (let i = 0; i < array.length; i++) {
                 const { username, password, avatar } = array[i];
                 if (usernameInput.value == username && passwordInput.value == password) {
                     errorMessage.innerText = '';
@@ -65,7 +64,6 @@ async function getUserData() {
                     localStorage.setItem('password', passwordInput.value);
                     localStorage.setItem('avatar', avatar);
                     setTimeout(() => {
-                        // window.location.href = "./html/homePage.html"
                         location.assign('./html/homePage.html');
                     }, 400);
                     break;
@@ -83,7 +81,7 @@ async function getUserData() {
         signUpUser(userArray);
 
         function signUpUser(array) {
-            for(let i = 0; i<array.length; i++) {
+            for (let i = 0; i < array.length; i++) {
                 const { username, password } = array[i];
                 if (usernameInput.value == username && passwordInput.value == password) {
                     errorMessage.innerText = 'user already exist, try logging in instead :)'
@@ -132,7 +130,6 @@ async function getUserData() {
         localStorage.setItem('avatar', userAvatar);
 
         setTimeout(() => {
-            // window.location.href = "./html/homePage.html"
             location.assign('./html/homePage.html');
         }, 400);
 
@@ -166,12 +163,21 @@ function userChooseAvatar() {
     avatar3.src = avatarImg3.href;
 
     avatar1.addEventListener('click', () => {
+        avatar1.classList.add('selectedAvi');
+        avatar2.classList.remove('selectedAvi');
+        avatar3.classList.remove('selectedAvi');
         userAvatar = 'https://img.icons8.com/emoji/256/frog-emoji.png'
     })
     avatar2.addEventListener('click', () => {
+        avatar2.classList.add('selectedAvi');
+        avatar1.classList.remove('selectedAvi');
+        avatar3.classList.remove('selectedAvi');
         userAvatar = 'https://img.icons8.com/emoji/256/snake-emoji.png'
     })
     avatar3.addEventListener('click', () => {
+        avatar3.classList.add('selectedAvi');
+        avatar1.classList.remove('selectedAvi');
+        avatar2.classList.remove('selectedAvi');
         userAvatar = 'https://img.icons8.com/emoji/256/lizard-emoji.png'
     })
 }

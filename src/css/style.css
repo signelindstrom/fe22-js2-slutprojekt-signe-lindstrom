@@ -1,29 +1,29 @@
-body{
+body {
     background-color: rgb(31, 31, 31);
 }
 
-button{
+button {
     cursor: pointer;
     font-family: 'Bungee';
     background-color: black;
     color: #ABFF4F;
 }
 
-button:hover{
+button:hover {
     color: #D93DAA;
 }
 
-img{
+img {
     max-height: 80px;
 }
 
 /* --- index-html --- */
 
-#user-input{
+#user-input {
     display: none;
 }
 
-#login-container{
+#login-container {
     display: flex;
     flex-flow: column wrap;
     background-color: rgb(64, 63, 63);
@@ -36,18 +36,18 @@ img{
     text-align: center;
 }
 
-#login-headline{
+#login-headline {
     cursor: pointer;
     background-color: black;
     color: #ABFF4F;
-    width:fit-content;
+    width: fit-content;
     padding: 20px;
     position: relative;
     margin: 10px auto;
     font-family: 'Bungee';
 }
 
-#user-submit{
+#user-submit {
     position: relative;
     top: 10px;
     margin-bottom: 10px;
@@ -55,23 +55,24 @@ img{
     margin: 10px auto;
 }
 
-#username-input{
+#username-input {
     font-family: 'IBM Plex Mono';
 }
 
-#username-label, #password-label{
+#username-label,
+#password-label {
     font-family: 'Bungee';
-    display:flex;
+    display: flex;
     margin: 5px;
     flex-direction: column;
 }
 
-#user-choice{
+#user-choice {
     text-align: center;
     padding: 20px;
 }
 
-#user-choice>button{
+#user-choice>button {
     padding: 10px;
     cursor: pointer;
     margin-left: 10px;
@@ -81,15 +82,26 @@ img{
     color: #ABFF4F;
 }
 
-#user-choice>button:hover{
+#user-choice>button:hover {
     color: #D93DAA;
 }
 
-.avatarDiv>img{
+.avatarDiv>img {
     cursor: pointer;
+    padding: 15px;
 }
 
-.errorMessage{
+.avatarDiv>img:hover {
+    margin: -1px;
+    border: #D93DAA 1px solid;
+}
+
+.selectedAvi {
+    margin: -1px;
+    border: white 1px solid;
+}
+
+.errorMessage {
     color: #ABFF4F;
     font-family: 'Bungee';
     font-size: small;
@@ -103,7 +115,7 @@ img{
 
 /* --- homepage, profile & profileViewer --- */
 
-#headline-profile{
+#headline-profile {
     background-color: black;
     color: #ABFF4F;
     width: fit-content;
@@ -114,10 +126,10 @@ img{
     left: 30px;
 }
 
-#user-info{
-    background-color: 	#403f3f;
+#user-info {
+    background-color: #403f3f;
     position: absolute;
-    width: 12rem;  
+    width: 12rem;
     text-align: center;
     top: 183px;
     font-family: 'Bungee';
@@ -131,34 +143,34 @@ img{
 }
 
 
-#post-div{
+#post-div {
     text-align: center;
     padding: 40px;
     background-color: black;
-    color:#ABFF4F;
+    color: #ABFF4F;
     width: 45vw;
-    position:relative;
+    position: relative;
     margin: 10px auto;
     top: 70px;
 
 }
 
-#post-div>p{
+#post-div>p {
     font-family: 'Bungee';
     margin: 0;
 }
 
-#post-div>input{
+#post-div>input {
     height: 30px;
     width: 500px;
     padding: 10px;
     margin: 10px;
     font-family: 'IBM Plex Mono';
     color: #59D2FE;
-    background-color: 	#403f3f;
+    background-color: #403f3f;
 }
 
-#post-div>button{
+#post-div>button {
     height: 40px;
     cursor: pointer;
     background-color: black;
@@ -166,20 +178,20 @@ img{
     border: 1px white solid;
 }
 
-#post-div>h1{
+#post-div>h1 {
     font-family: 'Bungee';
     font-size: medium;
     padding-bottom: 10px;
 }
 
-#all-posts{
+#all-posts {
     padding: 20px;
-    background-color: 	#403f3f;
+    background-color: #403f3f;
     font-family: 'IBM Plex Mono';
     color: #59D2FE;
 }
 
-#all-posts>div{
+#all-posts>div {
     text-align: left;
     padding: 20px;
     border-bottom: white 2px solid;
@@ -187,25 +199,25 @@ img{
 }
 
 
-.homepagePost{
+.homepagePost {
     display: flex;
     align-items: center;
 }
 
-.homepagePost>h3{
+.homepagePost>h3 {
     font-family: 'Bungee';
     padding-left: 10px;
     padding-right: 60px;
     color: #D93DAA;
 }
 
-.homepagePost>p{
+.homepagePost>p {
     color: #59D2FE;
     font-family: 'IBM Plex Mono';
 }
 
 
-#user-list{
+#user-list {
     font-family: 'Bungee';
     background-color: black;
     color: #ABFF4F;
@@ -219,7 +231,7 @@ img{
     overflow: auto;
 }
 
-#user-list>div{
+#user-list>div {
     padding: 10px;
     font-size: large;
     display: inline-flex;
@@ -231,24 +243,25 @@ img{
     cursor: pointer;
 }
 
-#user-list>div:hover{
+#user-list>div:hover {
     background-color: #403f3f;
     color: #59D2FE;
 }
 
-#user-list>h2{
+#user-list>h2 {
     padding: 10px;
     text-align: center;
     flex-basis: 15rem;
 }
 
-#user-list>img{
+#user-list>img {
     width: 30px;
 }
 
 
 
-#my-page-btn, #homepage-btn{
+#my-page-btn,
+#homepage-btn {
     position: absolute;
     top: 275px;
     left: 46px;
@@ -259,7 +272,7 @@ img{
     cursor: pointer;
 }
 
-#log-out-btn{
+#log-out-btn {
     background-color: black;
     color: #ABFF4F;
     cursor: pointer;
@@ -267,7 +280,7 @@ img{
     bottom: 10px;
 }
 
-#delete-btn{
+#delete-btn {
     background-color: black;
     color: #ABFF4F;
     cursor: pointer;
@@ -276,7 +289,10 @@ img{
     left: 90px;
 }
 
-#my-page-btn:hover, #homepage-btn:hover,#log-out-btn:hover,#delete-btn:hover{
+#my-page-btn:hover,
+#homepage-btn:hover,
+#log-out-btn:hover,
+#delete-btn:hover {
     color: #D93DAA;
 }
 

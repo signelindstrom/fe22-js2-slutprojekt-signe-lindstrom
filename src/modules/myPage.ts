@@ -30,14 +30,12 @@ async function getId() {
 
     idFromDatabase(userArray)
     function idFromDatabase(array) {
-        let i:number = 0;
+        let i: number = 0;
         array.forEach((info: firebaseUser) => {
             const { username } = info;
             if (currentUser == username) {
                 const userId = keyArray[i];
-                console.log(keyArray[i])
                 localStorage.setItem('userId', userId);
-                // console.log(userId)
             }
             i++;
         })
@@ -61,7 +59,6 @@ async function addPost(array) {
     array.forEach((data: firebaseUser) => {
         const { username } = data;
         if (currentUser == username) {
-            console.log('hej');
 
             let timestamp = new Date();
 
@@ -124,7 +121,7 @@ getUserList(userListDiv);
 // lets user delete their account from database and redirects user to login-page
 const deleteBtn = document.querySelector('#delete-btn') as HTMLButtonElement;
 deleteBtn.addEventListener('click', async () => {
-    
+
     const data = await getFirebaseData('users.json');
     const userArray = Object.values(data);
 

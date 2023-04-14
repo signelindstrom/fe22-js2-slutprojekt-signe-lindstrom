@@ -1,5 +1,5 @@
 const currentViewUser = localStorage.getItem('viewUser');
-const curretViewUserAvatar = localStorage.getItem('viewUserAvatar');
+const currentViewUserAvatar = localStorage.getItem('viewUserAvatar');
 
 import { logOut, createProfile, getUserList, getFirebaseData, postObject, firebaseUser } from "./multiUseFunctions";
 
@@ -19,7 +19,7 @@ setTimeout(() => {
 const displayAvatar = document.querySelector('#user-avatar') as HTMLImageElement;
 const displayName = document.querySelector('#user-name') as HTMLElement;
 
-createProfile(currentViewUser, curretViewUserAvatar, displayAvatar, displayName);
+createProfile(currentViewUser, currentViewUserAvatar, displayAvatar, displayName);
 
 // get user id to get user posts
 async function getId() {
@@ -30,14 +30,12 @@ async function getId() {
 
     idFromDatabase(userArray)
     function idFromDatabase(array) {
-        let i:number = 0;
+        let i: number = 0;
         array.forEach((info: firebaseUser) => {
             const { username } = info;
             if (currentViewUser == username) {
                 const currentView = keyArray[i];
-                console.log(keyArray[i])
                 localStorage.setItem('currentView', currentView);
-                // console.log(userId)
             }
             i++;
         })
@@ -52,7 +50,6 @@ async function getPost() {
 
     if (data != undefined) {
         const userArray = Object.values(data);
-        console.log(userArray);
         showAllPosts(userArray);
     }
     else {

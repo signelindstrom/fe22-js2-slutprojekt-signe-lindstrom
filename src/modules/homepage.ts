@@ -1,4 +1,4 @@
-import { getUserList, firebaseUser, logOut, baseUrl, createProfile, getFirebaseData, postObject } from "./multiUseFunctions";
+import { getUserList, firebaseUser, logOut, createProfile, getFirebaseData, postObject } from "./multiUseFunctions";
 
 const currentUser = localStorage.getItem('user');
 const currentAvatar = localStorage.getItem('avatar');
@@ -25,7 +25,7 @@ async function getPosts() {
     showAllPosts(userArray);
 }
 
-// object structure for postsArray
+// object structure for array with posts
 type postForFeed = {
     post: string,
     timestamp: number,
@@ -44,6 +44,7 @@ function showAllPosts(dataArray) {
         if (posts != undefined) {
             const messageArray = Object.values(posts);
 
+            // creates objects for array to display posts
             getAllPosts(messageArray);
             function getAllPosts(array) {
                 array.forEach((postObj: postObject) => {
