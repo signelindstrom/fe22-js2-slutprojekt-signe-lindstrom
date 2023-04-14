@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "parcel ./src/index.html ./src/html/myPage.html ./src/html/usersPage.html ./src/html/homePage.html",
-    "build": "parcel build ./src/index.html ./src/html/myPage.html ./src/html/usersPage.html ./src/html/homePage.html --public-url --dist-dir docs /FE22-js2-slutprojekt-signe-lindstrom/" ,
+    "build": "parcel build ./src/index.html ./src/html/myPage.html ./src/html/usersPage.html ./src/html/homePage.html --dist-dir docs --public-url /FE22-js2-slutprojekt-signe-lindstrom/" ,
     "clean": "del-cli ./.parcel-cache ./docs ./dist"
   },
   "keywords": [],
