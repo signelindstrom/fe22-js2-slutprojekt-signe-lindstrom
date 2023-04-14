@@ -131,7 +131,8 @@ async function getUserData() {
         localStorage.setItem('avatar', userAvatar);
 
         setTimeout(() => {
-            location.assign('../html/homePage.html');
+            window.location.href = "../html/homePage.html"
+            // location.assign('../html/homePage.html');
         }, 400);
 
     }
