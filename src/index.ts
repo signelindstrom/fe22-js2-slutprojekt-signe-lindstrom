@@ -65,7 +65,7 @@ async function getUserData() {
                     localStorage.setItem('password', passwordInput.value);
                     localStorage.setItem('avatar', avatar);
                     setTimeout(() => {
-                        location.assign('../html/homepage.html');
+                        window.location.href = "./html/homePage.html"
                     }, 400);
                     break;
                 }
@@ -131,7 +131,7 @@ async function getUserData() {
         localStorage.setItem('avatar', userAvatar);
 
         setTimeout(() => {
-            window.location.href = "./fe22-js2-slutprojekt-signe-lindstrom/html/homePage.html"
+            window.location.href = "./html/homePage.html"
             // location.assign('../html/homePage.html');
         }, 400);
 
